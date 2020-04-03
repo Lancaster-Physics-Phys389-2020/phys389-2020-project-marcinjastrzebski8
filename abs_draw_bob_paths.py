@@ -5,6 +5,7 @@ import pandas as pd
 from abstract_draw import AbstractDraw
 
 class Draw_bob(AbstractDraw):
+
     def draw(self):
         for point in range(len(self.time)):
             x1 = self.l1*np.sin(self.data['ANGLE 1'][point])
@@ -15,5 +16,4 @@ class Draw_bob(AbstractDraw):
             self.y.append(y2)
         plt.plot(self.x,self.y)
 
-    def get_dataset(self,name='file'):
-        super().get_dataset(name)
+    

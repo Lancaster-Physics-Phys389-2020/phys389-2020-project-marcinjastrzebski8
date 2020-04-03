@@ -11,6 +11,7 @@ class System():
     """
 
     def __init__(self,Pendulum1,Pendulum2):
+        #make this exception clearer
         if Pendulum1.length <= 10**(-3) or Pendulum1.mass <= 10**(-5) or Pendulum2.mass <=10**(-5) or Pendulum2.length <=10**(-3):
             raise Exception('The parameters of the system must be finite')
         self.first = Pendulum1

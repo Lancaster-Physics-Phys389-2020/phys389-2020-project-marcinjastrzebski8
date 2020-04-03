@@ -9,7 +9,6 @@ pend2 = Oscillator(1,10**(-6))
 #for i in range(1000):
 #sys.RK(0.0001)
 
-evolve = SavePandas(10**(-2),10**(-2),10**(-2),10**(-1))
+evolve = SavePandas(10,1,10**(-3),1)
 
 evolve.simulation(1000,0.001,[1,1,1,1])
-

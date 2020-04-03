@@ -2,8 +2,6 @@ import numpy as np
 import math
 from Oscillator_class import Oscillator
 from System import System
-from System_SA import SASystem
-from System_SHM import SHMSystem
 import pandas as pd
 
 """

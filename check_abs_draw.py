@@ -3,7 +3,7 @@ from abs_draw_shm import Draw_shm
 from abs_draw_bob_paths import Draw_bob
 from abs_draw_beats import Draw_beats
 
-
+"""
 mydrawing = Draw_ham()
 mydrawing.get_dataset('beats_test.csv')
 mydrawing.name_axes('Time','Hamiltonian')
@@ -23,10 +23,10 @@ mybob.get_dataset('beats_test.csv')
 mybob.name_axes('x','y')
 mybob.draw()
 mybob.show()
-
+"""
 mybeat = Draw_beats()
 #at theta = 0.2 there is noticable shift so maybe change restrictions
-mybeat.get_dataset('check_raise_beat.csv')
+mybeat.get_dataset('beats_test.csv')
 mybeat.name_axes('time',R'$\theta_{1}$')
 mybeat.draw()
 mybeat.show()
