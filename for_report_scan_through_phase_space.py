@@ -6,10 +6,10 @@ import pandas as pd
 
 sys = SavePandas(1,1,1,1)
 
-for ang1 in np.linspace(0.1,np.pi,20):
-    for ang2 in np.linspace(0.1,np.pi,3):
-        for p1 in np.linspace(0,5,10):
-            for p2 in np.linspace(0,1,2):
+for ang1 in np.linspace(0.1,np.pi,5):
+    for ang2 in np.linspace(0.1,np.pi,10):
+        for p1 in np.linspace(0,10,5):
+            for p2 in np.linspace(0,10,5):
                 z0 = [ang1,ang2,p1,p2]
                 sys.Sys.set_initial(z0)
                 ham = sys.Sys.En_hamiltonian()

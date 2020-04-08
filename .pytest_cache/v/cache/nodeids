@@ -9,6 +9,5 @@
   "test_motion.py::test_eval[f[1]-0.2039]",
   "test_motion.py::test_eval[f[2]--176.7339]",
   "test_motion.py::test_eval[f[3]--90.9048]",
-  "test_normal_freq.py::test_normal_frequencies",
   "test_save_class.py::test_SavePandas"
 ]
