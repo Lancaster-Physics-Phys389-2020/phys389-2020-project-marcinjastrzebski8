@@ -23,8 +23,10 @@ plt.legend([R'$\theta_{2,0} = 1.9$',R'$\theta_{2,0} = 1.905$'])
 plt.show()
 """
 
+
+
 mypath1 = Draw_bob()
-mypath1.get_dataset('ham-29.85012495834078.csv')
+mypath1.get_dataset('stps3.141592653589793_2.1277284357265285_0.0_10.0.csv')
 mypath1.name_axes('x','y')
 mypath1.draw()
 plt.show()
