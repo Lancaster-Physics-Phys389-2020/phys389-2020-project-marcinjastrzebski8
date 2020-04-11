@@ -26,7 +26,7 @@ plt.show()
 
 
 mypath1 = Draw_bob()
-mypath1.get_dataset('stps3.141592653589793_2.1277284357265285_0.0_10.0.csv')
+mypath1.get_dataset('stps0.1_3.141592653589793_7.5_10.0.csv')
 mypath1.name_axes('x','y')
 mypath1.draw()
 plt.show()

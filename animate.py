@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import pandas as pd
 
-readout = pd.read_pickle('beats_10.csv')
+readout = pd.read_pickle('stps0.1_3.141592653589793_7.5_10.0.csv')
 
 len1 = readout['PENDULUM INFO'][0]['l1']
 len2 = readout['PENDULUM INFO'][0]['l2']
@@ -58,4 +58,4 @@ def animate(frame):
 
 anim = animation.FuncAnimation(fig,animate,frames=len(x1vals),interval = timestep)  #interval should be RK step * 1000 for real motion
 #plt.show()
-anim.save('beats_10.mp4')
+anim.save('high_en_quasi.mp4')
