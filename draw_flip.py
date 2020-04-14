@@ -1,17 +1,20 @@
 import math
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib import cm
 from collections import OrderedDict
+"""
 seismic = cm.get_cmap('seismic',512)
 colors_d = seismic(np.linspace(0,1,512))
 the_color = cm.get_cmap('inferno',512)
 colors = the_color(np.linspace(0,1,512))
-flipdata1 = pd.read_pickle('ttf_full_0_0001.csv')
-flipdata = pd.read_pickle('ttf_full_0_004_long.csv')
+"""
+#flipdata1 = pd.read_pickle('ttf_full_0_0001.csv')
+flipdata = pd.read_pickle('ttf_full_0_002_long_abs.csv')
 print(flipdata) #print for checking
-print(flipdata1)
+#print(flipdata1)
 
 #ttf = [] use for separated
 ang1 = flipdata['ANGLE 1']
@@ -33,7 +36,7 @@ ax1.set_ylabel(R'$\theta_{2}$')
 
 #c = ttf for separated
 c = flipdata['TIME TO FLIP']
-plt.scatter(ang1,ang2,s = 1,c=c,cmap=the_color) 
+plt.scatter(ang1,ang2,s = 0.5,c=c,cmap='PuBu_r',norm=matplotlib.colors.LogNorm()) 
 #plt.scatter(ang1,ang2,c=c,cmap = seismic) use for separated
 cbar = plt.colorbar()
 cbar.set_label('Time to flip')
@@ -42,3 +45,17 @@ plt.show()
 #psm = axl.pcolormesh([ang1,ang2],cmap=copper, rasterized = True, vmin=-5,vmax=5) this from a different guide 
 #fig.colorbar(psm,ax=axl)
 #plt.show()
+"""
+THINK ABOUT THIS
+diff = []
+
+for point in range(len(c)):
+    diff.append(c[point]-c[len(c)-1-point])
+print(diff)
+
+plt.scatter(ang1,ang2,s = 0.5,c=diff,cmap='PuBu_r',norm=matplotlib.colors.LogNorm())
+cbar = plt.colorbar()
+plt.show()
+"""
+
+
