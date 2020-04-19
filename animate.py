@@ -6,7 +6,11 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import pandas as pd
 
-readout = pd.read_pickle('stps0.1_3.141592653589793_7.5_10.0.csv')
+"""
+This program can animate any run that is saved using Save_Pandas
+"""
+
+readout = pd.read_pickle('beats_10.csv')
 
 len1 = readout['PENDULUM INFO'][0]['l1']
 len2 = readout['PENDULUM INFO'][0]['l2']
@@ -37,11 +41,15 @@ ax = plt.axes(xlim=(-(len1+len2),(len1+len2)),ylim = (-(len1+len2),(len1+len2)))
 line1, = ax.plot([],[])
 line2, = ax.plot([],[])
 point1, = ax.plot([],[],'bo',markersize = m1)
-#shadow1, = ax.plot([],[],'o',color='deepskyblue')
-#shadow2, = ax.plot([],[],'o',color='tomato')
 point2, = ax.plot([],[],'ro',markersize = m2)
 
 def animate(frame):
+    """
+    This function defines what is being drawn on each frame
+    After the 100th frame, some of the past positions of the bobs are also being plotted
+    to obtain a sort of trail for aesthetic purposes
+    """
+
     if frame <=100:
         line1.set_data([0,x1vals[frame]],[0,y1vals[frame]])
         line2.set_data([x1vals[frame],x2vals[frame]],[y1vals[frame],y2vals[frame]])
@@ -56,6 +64,6 @@ def animate(frame):
     return (line1,line2,point1,point2)
     
 
-anim = animation.FuncAnimation(fig,animate,frames=len(x1vals),interval = timestep)  #interval should be RK step * 1000 for real motion
-#plt.show()
-anim.save('high_en_quasi.mp4')
+anim = animation.FuncAnimation(fig,animate,frames=len(x1vals),interval = timestep*1000)  #interval should be RK step * 1000 for real motion
+
+anim.save('beats_10.mp4')

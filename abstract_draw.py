@@ -6,6 +6,12 @@ import pandas as pd
 
 class AbstractDraw(ABC):
 
+    """
+    This is an abstract class to make drawing plots quicker for the purpose of the analysis.
+    get_dataset uses DataFrames saved with Save_Pandas that are common for all the classes derived from this one
+    What is being drawn is the abstract part of this class and is to be defined for each subclass
+    """
+
     def __init__(self):
         self.x = []
         self.y = []

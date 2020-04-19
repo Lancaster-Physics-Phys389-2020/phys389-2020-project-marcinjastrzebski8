@@ -6,6 +6,16 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from abstract_draw import AbstractDraw
 
+
+"""
+NOT NEEDED FOR REPORT
+"""
+"""
+This class can draw theoretical paths for the analytical small angle cases
+with beats. 
+User can choose between the two angles.
+"""
+
 class Draw_beats(AbstractDraw):
     def get_dataset(self,dataset = 'file'):
         super().get_dataset(dataset)
@@ -28,4 +38,4 @@ class Draw_beats(AbstractDraw):
             plt.plot(self.x,self.y)
 
         
-        plt.plot()
+    

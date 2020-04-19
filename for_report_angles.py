@@ -4,6 +4,9 @@ from Save_Pandas import SavePandas
 import numpy as np
 import pandas as pd
 
+"""
+This program has been used to show initial condition sensitivity
+"""
 
 myangle1 = Draw_angle()
 myangle1.get_dataset('path_uno.csv')

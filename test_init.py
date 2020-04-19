@@ -2,6 +2,10 @@ import pytest
 import numpy as np
 from System import System
 from Oscillator_class import Oscillator
+"""
+A simple set of tests checking if different elements of 
+the system can be accessed properly
+"""
 
 pend1 = Oscillator(1,1)
 pend2 = Oscillator(2,2)

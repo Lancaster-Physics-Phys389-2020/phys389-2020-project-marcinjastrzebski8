@@ -4,6 +4,12 @@ from Save_Pandas import SavePandas
 import numpy as np
 import pandas as pd
 
+"""
+This program was used to generate plots of phase space paths
+at various energies
+I have used this to categorise the possible outcomes
+"""
+
 sys = SavePandas(1,1,1,1)
 
 for ang1 in np.linspace(0.1,np.pi,5):

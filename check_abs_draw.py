@@ -23,13 +23,14 @@ mybob.get_dataset('beats_test.csv')
 mybob.name_axes('x','y')
 mybob.draw()
 mybob.show()
-"""
+
 mybeat = Draw_beats()
 #at theta = 0.2 there is noticable shift so maybe change restrictions
 mybeat.get_dataset('beats_test.csv')
 mybeat.name_axes('time',R'$\theta_{1}$')
 mybeat.draw()
 mybeat.show()
+"""
 
 """DO DRAW ALL BUT ITS NOT URGENT, FOCUS ON
  THE REPORT AND FINAL TOUCHES TO THE ABOVE FIRST"""

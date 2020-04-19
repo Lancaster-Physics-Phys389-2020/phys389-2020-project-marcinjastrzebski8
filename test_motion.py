@@ -2,7 +2,11 @@ import pytest
 import numpy as np
 from System import System
 from Oscillator_class import Oscillator
-
+"""
+A set of tests checking if the method motion() of System
+calculates the functions f1-f4 properly
+Expected values have been computed manually.
+"""
 
 pend1 = Oscillator(2,3)
 pend2 = Oscillator(5,2)

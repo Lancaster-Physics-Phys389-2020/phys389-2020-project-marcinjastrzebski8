@@ -4,16 +4,16 @@ import math
 
 class System():
     """
-    This class will take two pendulums and set them in motion.
+    This class takes two pendulums and sets them in motion.
     The equations of motion are those of hamiltonian mechanics;
     Therefore, the system uses generalised coordinates - (angle and generalised momentum in this case)
     User can pick the initial conditions (the angle and momentum for each pendulum)
     """
 
     def __init__(self,Pendulum1,Pendulum2):
-        #make this exception clearer
+        #an exception will be thrown in some limiting cases for very small pendulums
         if Pendulum1.length <= 10**(-3) or Pendulum1.mass <= 10**(-5) or Pendulum2.mass <=10**(-5) or Pendulum2.length <=10**(-3):
-            raise Exception('The parameters of the system must be finite')
+            raise Exception('The parameters of the system you have passed are too small')
         self.first = Pendulum1
         self.second = Pendulum2
         #the parameters of the system - angles and momenta are stored in Z
@@ -22,7 +22,7 @@ class System():
 
     def set_initial(self,Z0 = np.array([0,0,0,0],dtype = float)):
         """
-        The format for Z0 is [angle1,angle2,momentum1,momentum2]!!!
+        The format for Z0 is [angle1,angle2,momentum1,momentum2]!
         """
         self.Z = Z0
     
@@ -70,6 +70,9 @@ class System():
         self.Z = self.Z + (self.Y1+ np.multiply(2,self.Y2)+np.multiply(2,self.Y3)+self.Y4)/6
 
     def En_hamiltonian(self):
+        """
+        The user can calculate the hamiltonian of the system
+        """
         num1 = self.second.mass*((self.second.length)**2)*((self.Z[2])**2)
         num2 = (self.first.mass + self.second.mass)*((self.first.length)**2)*((self.Z[3])**2)
         num3 = 2*self.second.mass*self.first.length*self.second.length*self.Z[2]*self.Z[3]*np.cos((self.Z[0])-(self.Z[1]))

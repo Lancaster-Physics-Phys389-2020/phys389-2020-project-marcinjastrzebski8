@@ -1,15 +1,13 @@
-"""
-FLIP TIME ANALYSIS
-"""
-
-'''
-LOOK AT X AND -X TO GIVE AN IDEA OF NUMERICAL ACCURACY
-'''
 import numpy as np
 import math
 from Oscillator_class import Oscillator
 from System import System
 import pandas as pd
+"""
+This program has been used to create the flippig time chart
+(This takes over one day to run but updates should print along the way)
+"""
+
 
 m1 = 1
 m2 = 1
@@ -29,11 +27,15 @@ for angle1 in np.linspace(-np.pi,np.pi,200):
         Sys.set_initial(Z)
         for step in range(time):
             if 2*np.cos(angle1) + np.cos(angle2) > 1:
-                break
+                break # break if inside energically forbidden region
             Sys.RK(timestep)
             if abs(Sys.Z[0]) > np.pi or abs(Sys.Z[1]) > np.pi:
-                    break 
+                    break #break when a flip happens
         print("Point %s.%s finished" %(angle1,angle2))
+        """
+        The program recognises which of the pendulums flipped 
+        Not used in my analysis but could be a new way to look at the problem
+        """
         if Sys.Z[0] >np.pi:
             data.append([angle1,angle2,timestep*step,'pend1'])
         elif Sys.Z[1] >np.pi:

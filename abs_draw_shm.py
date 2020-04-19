@@ -3,7 +3,9 @@ import math
 import matplotlib.pyplot as plt
 import pandas as pd
 from abstract_draw import AbstractDraw
-
+"""
+NOT USED FOR THE REPORT
+"""
 class Draw_shm(AbstractDraw):
     def get_dataset(self,dataset = 'file'):
         super().get_dataset(dataset)

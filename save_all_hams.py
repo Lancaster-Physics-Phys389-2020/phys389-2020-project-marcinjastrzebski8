@@ -3,12 +3,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 """
+This program plots historams for the 5 motion categories
+"""
 chaotic_flip = Hams_cat('chaotic__flip')
 chaotic_no_flip = Hams_cat('chaotic_no_flip')
 high_en_spinning = Hams_cat('high_en_spinning')
 quasiperiodic_high = Hams_cat('quasiperiodic_high')
 quasiperiodic_small = Hams_cat('quasiperiodic_small')
-"""
+
 
 
 
@@ -27,26 +29,26 @@ hams5 = d5['HAMILTONIAN']
 plt.hist(hams1,50)
 plt.xlabel('Hamiltonian')
 plt.ylabel('Counts')
-#plt.legend(['Category C'])
-#plt.show()
+plt.legend(['Category C'])
+plt.show()
 plt.hist(hams2,50)
 plt.xlabel('Hamiltonian')
 plt.ylabel('Counts')
-#plt.legend(['Category B'])
-#plt.show()
+plt.legend(['Category B'])
+plt.show()
 plt.hist(hams3,50)
 plt.xlabel('Hamiltonian')
 plt.ylabel('Counts')
-#plt.legend(['Category D'])
-#plt.show()
+plt.legend(['Category D'])
+plt.show()
 plt.hist(hams4,50)
 plt.xlabel('Hamiltonian')
 plt.ylabel('Counts')
-#plt.legend(['Category E'])
-#plt.show()
+plt.legend(['Category E'])
+plt.show()
 plt.hist(hams5,50)
 plt.xlabel('Hamiltonian')
 plt.ylabel('Counts')
-#plt.legend(['Category A'])
-plt.legend(['C','B','D','E','A'])
+plt.legend(['Category A'])
+
 plt.show()

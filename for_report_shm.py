@@ -5,6 +5,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+"""
+This shows the code reproduces simple harmonic motion
+"""
+
+
 shm = SavePandas(10**(-4),1,0.5,0.5)
 shm.simulation(10000,0.001,[0.1,0.1,0,0])
 shm.save_as('shm')

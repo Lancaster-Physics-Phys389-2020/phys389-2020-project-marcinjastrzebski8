@@ -6,6 +6,13 @@ from abstract_draw import AbstractDraw
 
 class Draw_bob(AbstractDraw):
 
+    """
+    Class used to draw the paths (in physical space)
+    taken by the second bob
+    Plotting the first bob instead could easily be achieved
+    by appending x1 and y1
+    """
+
     def draw(self):
         for point in range(len(self.time)):
             x1 = self.l1*np.sin(self.data['ANGLE 1'][point])
